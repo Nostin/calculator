@@ -20,9 +20,14 @@ export const NumberButton: React.FC<ButtonProps> = (props) => {
     }
   }
 
-  const widthClass = digit === 0 ? 'w-20' : 'w-12'
+  const widthClass = digit === 0 ? 'w-2/4' : 'w-1/4'
+  const borderBottom = digit === 0 ? '' : 'border-b'
   return (
-    <button className={`bg-gray-400 text-white h-12 ${widthClass}`} type="button" onClick={updateValue}>
+    <button
+      className={`bg-gray-400 text-white h-12 ${widthClass} ${borderBottom} border-r border-gray-100`}
+      type="button"
+      onClick={updateValue}
+    >
       {digit}
     </button>
   )
