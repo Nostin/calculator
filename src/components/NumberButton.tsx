@@ -2,10 +2,11 @@ interface ButtonProps {
   digit: number
   clickButton: (digit: number) => void
   currentValue: number
+  label?: string
 }
 
 export const NumberButton: React.FC<ButtonProps> = (props) => {
-  const { digit, clickButton, currentValue } = props
+  const { digit, clickButton, currentValue, label } = props
 
   const updateValue = () => {
     if (currentValue === 0) {
@@ -27,6 +28,7 @@ export const NumberButton: React.FC<ButtonProps> = (props) => {
       className={`bg-gray-400 text-white h-12 ${widthClass} ${borderBottom} border-r border-gray-100`}
       type="button"
       onClick={updateValue}
+      aria-label={label}
     >
       {digit}
     </button>

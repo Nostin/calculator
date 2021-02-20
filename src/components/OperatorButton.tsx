@@ -8,10 +8,11 @@ export enum OperatorEnum {
 interface ButtonProps {
   operator: OperatorEnum
   clickButton: (operator: OperatorEnum) => void
+  label?: string
 }
 
 export const OperatorButton: React.FC<ButtonProps> = (props) => {
-  const { clickButton, operator } = props
+  const { clickButton, operator, label } = props
 
   const updateValue = () => {
     clickButton(operator)
@@ -22,6 +23,7 @@ export const OperatorButton: React.FC<ButtonProps> = (props) => {
       className="bg-yellow-500 text-white h-12 w-1/4 border-b border-gray-100"
       type="button"
       onClick={updateValue}
+      aria-label={label}
     >
       {operator === OperatorEnum.Multiply && 'x'}
       {operator === OperatorEnum.Divide && '÷'}

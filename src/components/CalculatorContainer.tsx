@@ -42,28 +42,30 @@ export const CalculatorContainer: React.FC = () => {
 
   return (
     <div className="w-52 border border-gray-300 rounded-lg color-border-gray overflow-hidden">
-      <p className="text-red bg-gray-700 text-white p-4 text-xl text-right">{value}</p>
+      <p title="answer" className="text-red bg-gray-700 text-white p-4 text-xl text-right">
+        {value}
+      </p>
       <div className="flex justify-between">
         <ClearButton clickButton={clearPressed} />
-        <OperatorButton operator={OperatorEnum.Divide} clickButton={operatorPressed} />
+        <OperatorButton operator={OperatorEnum.Divide} clickButton={operatorPressed} label="divide" />
       </div>
-      <NumberButton digit={7} clickButton={numberPressed} currentValue={value} />
-      <NumberButton digit={8} clickButton={numberPressed} currentValue={value} />
-      <NumberButton digit={9} clickButton={numberPressed} currentValue={value} />
-      <OperatorButton operator={OperatorEnum.Multiply} clickButton={operatorPressed} />
+      <NumberButton digit={7} clickButton={numberPressed} currentValue={value} label="seven" />
+      <NumberButton digit={8} clickButton={numberPressed} currentValue={value} label="eight" />
+      <NumberButton digit={9} clickButton={numberPressed} currentValue={value} label="nine" />
+      <OperatorButton operator={OperatorEnum.Multiply} clickButton={operatorPressed} label="times" />
 
-      <NumberButton digit={4} clickButton={numberPressed} currentValue={value} />
-      <NumberButton digit={5} clickButton={numberPressed} currentValue={value} />
-      <NumberButton digit={6} clickButton={numberPressed} currentValue={value} />
-      <OperatorButton operator={OperatorEnum.Subtract} clickButton={operatorPressed} />
+      <NumberButton digit={4} clickButton={numberPressed} currentValue={value} label="four" />
+      <NumberButton digit={5} clickButton={numberPressed} currentValue={value} label="five" />
+      <NumberButton digit={6} clickButton={numberPressed} currentValue={value} label="six" />
+      <OperatorButton operator={OperatorEnum.Subtract} clickButton={operatorPressed} label="minus" />
 
-      <NumberButton digit={1} clickButton={numberPressed} currentValue={value} />
-      <NumberButton digit={2} clickButton={numberPressed} currentValue={value} />
-      <NumberButton digit={3} clickButton={numberPressed} currentValue={value} />
-      <OperatorButton operator={OperatorEnum.Add} clickButton={operatorPressed} />
+      <NumberButton digit={1} clickButton={numberPressed} currentValue={value} label="one" />
+      <NumberButton digit={2} clickButton={numberPressed} currentValue={value} label="two" />
+      <NumberButton digit={3} clickButton={numberPressed} currentValue={value} label="three" />
+      <OperatorButton operator={OperatorEnum.Add} clickButton={operatorPressed} label="plus" />
 
       <div className="flex justify-between">
-        <NumberButton digit={0} clickButton={numberPressed} currentValue={value} />
+        <NumberButton digit={0} clickButton={numberPressed} currentValue={value} label="zero" />
         <EqualsButton clickButton={equalsPressed} />
       </div>
     </div>

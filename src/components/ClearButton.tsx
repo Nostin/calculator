@@ -14,6 +14,7 @@ export const ClearButton: React.FC<ButtonProps> = (props) => {
       className="bg-gray-600 text-white h-12 w-1/4 border-b border-r border-gray-100"
       type="button"
       onClick={updateValue}
+      aria-label="clear"
     >
       C
     </button>
